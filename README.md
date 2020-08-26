@@ -1,2 +1,1 @@
-# emacs-cfg
-Emacs Configuration
+# Linux Home configuration files
