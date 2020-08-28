@@ -30,15 +30,33 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files nil)
  '(package-selected-packages (quote (solarized-theme))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Key Mappings for org
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
+
+;; Key mapping because ctrl-backspace in a terminal is ^H (!)
+(global-set-key (kbd "C-h") 'backward-kill-word)
+
+
+
 (load-theme 'solarized-dark t)
 
-(package-initialize)
+;; Scan Agenda
+(setq org-agenda-files '("~/emacs-docs"))
+
+;; Word Wrap on by default. But this sucks for tables.
+(global-visual-line-mode t)
+;; Toggle Word Wrap
+(define-key org-mode-map "\M-q" 'global-visual-line-mode)
+
+;; Backspace.. as backspace!
+(normal-erase-is-backspace-mode 0)

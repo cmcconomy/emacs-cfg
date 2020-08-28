@@ -1,9 +1,13 @@
 # Linux Home configuration files
+## To Use
+Clone this folder, then `ln -s <linux-home>/<file> <file>` for each config file.
 
 # Other notes
 For emacs to work, I made the following config changes inside Windows Terminal:
 ```
-// CMc: unbind a bunch of keys to leave emacs alone!!! 
+// CMc: unbind a bunch of keys to leave emacs alone!!!
+
+{ "command": "unbound", "keys": [ "ctrl+shift+2" ] },
 { "command": "unbound", "keys": [ "alt+shift+-" ] },
 { "command": "unbound", "keys": [ "alt+shift+plus" ] },
 { "command": "unbound", "keys": [ "alt+down" ] },
